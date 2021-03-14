@@ -15,6 +15,7 @@ export function isTypedArray<T>(
   check: (x: any) => x is T
 ): arr is T[] {
   if (!Array.isArray(arr)) return false;
+  console.log('test');
   return !arr.some((item) => !check(item));
 }
 
@@ -57,6 +58,7 @@ export function isChannel(arg: any): arg is IChannel {
  * @param arg - value to check
  * @beta
  */
+
 export function isMessage(arg: any): arg is IMessage {
   return (
     typeof arg.teamId === "string" &&
